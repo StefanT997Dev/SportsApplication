@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragment_register">
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.sportsapp.fragments.loginFragment.fragment_login"
+        android:label="fragment_login" >
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_select_sport"
+            app:destination="@id/fragment_select_sport" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.example.sportsapp.fragments.registerFragment.fragment_register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_fragment_register_to_fragment_login"
+            app:destination="@id/fragment_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_select_sport"
+        android:name="com.example.sportsapp.fragments.selectSportFragment.fragment_select_sport"
+        android:label="fragment_select_sport"
+        tools:layout="@layout/fragment_select_sport" >
+        <action
+            android:id="@+id/action_fragment_select_sport_to_fragment_players_recyclerView"
+            app:destination="@id/fragment_players_recyclerView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_players_recyclerView"
+        android:name="com.example.sportsapp.fragments.playersRecyclerViewFragment.fragment_players_recyclerView"
+        android:label="fragment_players_recycler_view"
+        tools:layout="@layout/fragment_players_recycler_view" >
+        <action
+            android:id="@+id/action_fragment_players_recyclerView_to_fragment_select_sport"
+            app:destination="@id/fragment_select_sport" />
+        <action
+            android:id="@+id/action_fragment_players_recyclerView_to_fragment_enter_player"
+            app:destination="@id/fragment_enter_player" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_enter_player"
+        android:name="com.example.sportsapp.fragments.enterPlayerFragment.fragment_enter_player"
+        android:label="fragment_enter_player"
+        tools:layout="@layout/fragment_enter_player" >
+        <action
+            android:id="@+id/action_fragment_enter_player_to_fragment_players_recyclerView"
+            app:destination="@id/fragment_players_recyclerView" />
+    </fragment>
+</navigation>
